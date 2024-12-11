@@ -1,7 +1,7 @@
 // _worker.js
 
 // Docker镜像仓库主机地址
-let hub_host = 'registry-1.docker.io';
+let hub_host = 'registry-1.docker.io/v2';
 // Docker认证服务器地址
 const auth_url = 'https://auth.docker.io';
 // 自定义的工作服务器地址
@@ -13,7 +13,7 @@ let 屏蔽爬虫UA = ['netcraft'];
 function routeByHosts(host) {
 	// 定义路由表
 	const routes = {
-		// 生产环境
+/**		// 生产环境
 		"quay": "quay.io",
 		"gcr": "gcr.io",
 		"k8s-gcr": "k8s.gcr.io",
@@ -21,9 +21,9 @@ function routeByHosts(host) {
 		"ghcr": "ghcr.io",
 		"cloudsmith": "docker.cloudsmith.io",
 		"nvcr": "nvcr.io",
-		
+*/		
 		// 测试环境
-		"test": "registry-1.docker.io",
+		"test": "registry-1.docker.io/v2",
 	};
 
 	if (host in routes) return [ routes[host], false ];
